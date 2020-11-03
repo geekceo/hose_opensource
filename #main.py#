@@ -4,6 +4,8 @@ import os
 
 import  post
 
+#url = input()
+
 os.system("cls||clear")
 import time
 print("""             
@@ -14,25 +16,20 @@ print("""
 ||    ||     ||||    ||||||||   ||||||||             |___||||||||___|
 """)
 
-time.sleep(2)
+time.sleep(3)
 
 os.system("cls||clear")
 
-#status = requests.get("https://vk.com")
+status = requests.get("https://vk.com")
+print(status)
 
-comms = {"help": "connect [-url value]\ndisconnect []"}
-сur_comm = []
+print("1| Params\n2| Get")
+menu = int(input())
 
-_input = ""
+if menu == 1:
+    print("url: ", end="")
+    url = input()
+    print("?key=value : ?", end="")
+    key_value = input()
+    post.post(url, key_value)
 
-def main_line():
-    global _input
-    global cur_comm
-    print("HoSE#> ", end="")
-    _input = input()
-    cur_comm = _input.split()
-
-    print(cur_comm)
-    print(comms.get(cur_comm[0]))
-
-main_line()
